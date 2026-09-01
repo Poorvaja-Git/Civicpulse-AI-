@@ -116,7 +116,7 @@ export function analyzeImage(
 ): { category: Category; confidence: number; severity: Severity; simulated: true } {
   const nameHit = fileName
     ? (Object.keys(CATEGORY_KEYWORDS) as Category[]).find((c) =>
-        CATEGORY_KEYWORDS[c].some((k) => fileName.toLowerCase().includes(k.split(" ")[0])),
+        CATEGORY_KEYWORDS[c].some((k) => fileName.toLowerCase().includes(k.split(" ")[0] ?? k)),
       )
     : undefined;
   const category = nameHit ?? textAnalysis.category;
@@ -333,7 +333,7 @@ export function weeklyBuckets(reports: Report[]): { week: string; reports: numbe
   const buckets = [0, 0, 0, 0];
   reports.forEach((r) => {
     const weeksAgo = Math.floor((now - new Date(r.createdAt).getTime()) / (7 * 86400000));
-    if (weeksAgo >= 0 && weeksAgo < 4) buckets[3 - weeksAgo] += 1;
+    if (weeksAgo >= 0 && weeksAgo < 4) buckets[3 - weeksAgo] = (buckets[3 - weeksAgo] ?? 0) + 1;
   });
   return buckets.map((reports, i) => ({ week: `Week ${i + 1}`, reports }));
 }

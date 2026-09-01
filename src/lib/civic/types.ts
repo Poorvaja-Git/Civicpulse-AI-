@@ -37,14 +37,14 @@ export interface StatusEvent {
   to: Status;
   changedBy: string;
   at: string;
-  note?: string;
+  note?: string | undefined;
 }
 
 export interface Report {
   id: string;
   description: string;
   category: Category;
-  imageUrl?: string;
+  imageUrl?: string | undefined;
   landmark: string;
   ward: string;
   lat: number;

@@ -104,7 +104,7 @@ function ReportPage() {
     setBusy(true);
     await new Promise((r) => setTimeout(r, 900)); // visible analysis step for the demo
 
-    const loc = LOCATION_PRESETS[Number(locationIdx)];
+    const loc = LOCATION_PRESETS[Number(locationIdx)] ?? LOCATION_PRESETS[0]!;
     const text = analyzeText(description);
     const image = file ? analyzeImage(file.name, text) : null;
     const finalCategory: Category =
