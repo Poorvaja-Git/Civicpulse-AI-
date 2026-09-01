@@ -91,7 +91,7 @@ function historyFor(status: Status, createdAt: string, id: string) {
   const base = new Date(createdAt).getTime();
   return upto.map((s, i) => ({
     id: `${id}-h${i}`,
-    from: i === 0 ? null : upto[i - 1],
+    from: i === 0 ? null : (upto[i - 1] ?? null),
     to: s,
     changedBy: i === 0 ? "Citizen" : "Authority · Ward Office",
     at: new Date(base + i * 26 * 3600 * 1000).toISOString(),

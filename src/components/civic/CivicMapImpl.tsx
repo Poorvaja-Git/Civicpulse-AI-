@@ -13,9 +13,9 @@ export default function CivicMap({
 }: {
   points: MapPoint[];
   height?: number;
-  center?: [number, number];
-  zoom?: number;
-  onSelect?: (id: string) => void;
+  center?: [number, number] | undefined;
+  zoom?: number | undefined;
+  onSelect?: ((id: string) => void) | undefined;
 }) {
   const fallbackCenter: [number, number] = center ?? [
     points.reduce((s, p) => s + p.lat, 0) / (points.length || 1) || 18.54,

@@ -23,9 +23,9 @@ export function MapPanel({
 }: {
   points: MapPoint[];
   height?: number;
-  center?: [number, number];
-  zoom?: number;
-  onSelect?: (id: string) => void;
+  center?: [number, number] | undefined;
+  zoom?: number | undefined;
+  onSelect?: ((id: string) => void) | undefined;
 }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
