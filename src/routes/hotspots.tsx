@@ -134,7 +134,7 @@ function HotspotsPage() {
                   </p>
 
                   <Button asChild variant="outline" className="mt-4">
-                    <Link to="/issues/$id" params={{ id: h.reportIds[0] }}>
+                    <Link to="/issues/$id" params={{ id: h.reportIds[0] ?? "" }}>
                       Open lead report
                     </Link>
                   </Button>
