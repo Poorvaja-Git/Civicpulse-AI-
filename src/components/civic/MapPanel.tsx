@@ -1,7 +1,7 @@
 import { Suspense, lazy, useEffect, useState } from "react";
-import type { MapPoint } from "./CivicMap.client";
+import type { MapPoint } from "./map-types";
 
-const CivicMap = lazy(() => import("./CivicMap.client"));
+const CivicMap = lazy(() => import("./CivicMapImpl"));
 
 function Skeleton({ height }: { height: number }) {
   return (

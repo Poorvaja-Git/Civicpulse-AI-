@@ -1,22 +1,8 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { MapContainer, TileLayer, CircleMarker, Popup, Tooltip } from "react-leaflet";
-import type { Severity } from "@/lib/civic/types";
 import { severityColor } from "./bits";
-
-export interface MapPoint {
-  id: string;
-  lat: number;
-  lng: number;
-  title: string;
-  category: string;
-  location: string;
-  severity: Severity;
-  reports: number;
-  priority: number;
-  status: string;
-  department: string;
-}
+import type { MapPoint } from "./map-types";
 
 export default function CivicMap({
   points,
