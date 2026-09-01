@@ -26,7 +26,7 @@ export const Route = createFileRoute("/analytics")({
   component: AnalyticsPage,
 });
 
-function Bar({ label, value, max, tint }: { label: string; value: number; max: number; tint?: string }) {
+function Bar({ label, value, max, tint }: { label: string; value: number; max: number; tint?: string | undefined }) {
   return (
     <li>
       <div className="flex items-baseline justify-between gap-3 text-sm">
