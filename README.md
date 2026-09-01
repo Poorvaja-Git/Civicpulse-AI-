@@ -1,6 +1,6 @@
 # Civic Pulse AI
 
-Build a complete, working, hackathon-ready web application called CivicPulse — AI-Powered Civic Intelligence and Priority Management System.
+ CivicPulse — AI-Powered Civic Intelligence and Priority Management System.
 
 
 
